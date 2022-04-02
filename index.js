@@ -3,7 +3,7 @@ const bodyparser = require('body-parser');
 const cors =  require('cors');
 const mysql = require('mysql2');
 
-
+const PORT = process.env.PORT || 5050;
 
 const app = express();
 
@@ -407,6 +407,6 @@ app.put('/jobs/:id', (req, res)=>{
 
 
 
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
     console.log('server conectado')
 })
