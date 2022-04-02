@@ -16,7 +16,7 @@ app.use(bodyparser.json());
 // conexão com o banco de dados;
 
 const db = mysql.createConnection({
-    host: 'br440.hostgator.com.br',
+    host: '216.172.172.15',
     user: 'godeve62_node',
     password:'matheus123',
     database: 'godeve62_node',
