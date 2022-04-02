@@ -16,10 +16,10 @@ app.use(bodyparser.json());
 // conexão com o banco de dados;
 
 const db = mysql.createConnection({
-    host: 'us-cdbr-east-05.cleardb.net',
-    user: 'b99a3839b8c2b0',
-    password:'0afafd88',
-    database: 'heroku_0231b80498bf56a',
+    host: 'br440.hostgator.com.br',
+    user: 'godeve62_node',
+    password:'matheus123',
+    database: 'godeve62_node',
     port: 3306
 });
 
