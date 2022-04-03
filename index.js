@@ -50,17 +50,21 @@ app.post('/login', (req, res)=>{
             console.log(err, 'erro');
         }
 
-        if(result.length > 0){
-            res.send({
-                message: 'Usuario logado com sucesso.',
-                data: result
-            });
-        }else{
-            res.send({
-                message: 'Email ou senha incorreta.',
-                data: result
-            });
+        if (typeof result.length !== 'undefined') {
+        
+            if(result.length > 0){
+                res.send({
+                    message: 'Usuario logado com sucesso.',
+                    data: result
+                });
+            }else{
+                res.send({
+                    message: 'Email ou senha incorreta.',
+                    data: result
+                });
+            }
         }
+        
     });
 });
 
@@ -74,12 +78,16 @@ app.get('/user', (req, res)=>{
             console.log(err, 'erro');
         }
 
-        if(result.length > 0){
-            res.send({
-                message: 'mostrando todos os dados do usuarios',
-                data: result
-            });
+        if (typeof result.length !== 'undefined') {
+            
+             if(result.length > 0){
+                    res.send({
+                        message: 'mostrando todos os dados do usuarios',
+                        data: result
+                    });
+                }
         }
+       
     });
 });
 
@@ -100,6 +108,8 @@ app.get('/user/:id', (req, res)=>{
         if(err){
             console.log(err, 'erro');
         }
+        
+        if (typeof result.length !== 'undefined') {
 
         if(result.length > 0){
             res.send({
@@ -112,6 +122,7 @@ app.get('/user/:id', (req, res)=>{
             res.send({
                 message: 'não encontramos esse usuario'
             })
+        }
         }
     });
 });
@@ -138,6 +149,8 @@ app.post('/user', (req, res)=>{
         if(err){
             console.log(err, 'erro');
         }
+        
+        if (typeof result.length !== 'undefined') {
 
         if(result.length > 0){
             res.send({
@@ -162,6 +175,7 @@ app.post('/user', (req, res)=>{
                 }
             });
 
+        }
         }
     });
 
@@ -258,12 +272,15 @@ app.get('/jobs', (req, res)=>{
         if(err){
             console.log(err, 'erro');
         }
+        
+        if (typeof result.length !== 'undefined') {
 
         if(result.length > 0){
             res.send({
                 message: 'mostrando todos os dados do jobs',
                 data: result
             });
+        }
         }
     });
 });
@@ -283,6 +300,7 @@ app.get('/jobs/:id', (req, res)=>{
             console.log(err, 'erro');
         }
 
+        if (typeof result.length !== 'undefined') {
         if(result.length > 0){
             res.send({
                 message: `mostrando job ${id}.`,
@@ -294,6 +312,7 @@ app.get('/jobs/:id', (req, res)=>{
             res.send({
                 message: `job com id ${id}, não encontrado.`,
             });
+        }
         }
     });
 });
