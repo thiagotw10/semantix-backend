@@ -12,6 +12,9 @@ app.use(bodyparser.json());
 
 
 
+app.on('uncaughtException', function (err) {
+    console.log(err);
+})
 
 // conexão com o banco de dados;
 
